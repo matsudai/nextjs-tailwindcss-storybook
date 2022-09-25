@@ -8,108 +8,116 @@
 
 1. Create Next App.
 
-    ```sh
-    yarn create next-app --typescript nextjs-tailwindcss-storybook
+   ```sh
+   yarn create next-app --typescript nextjs-tailwindcss-storybook
 
-    # > yarn create v1.22.19
-    # > [1/4] Resolving packages...
-    # >
-    # >     ...
-    # >
-    # > Success! Created nextjs-tailwindcss-storybook at /workspaces/nextjs-tailwindcss-storybook/nextjs-tailwindcss-storybook
-    # > Done in 41.70s.
-    ```
+   # > yarn create v1.22.19
+   # > [1/4] Resolving packages...
+   # >
+   # >     ...
+   # >
+   # > Success! Created nextjs-tailwindcss-storybook at /workspaces/nextjs-tailwindcss-storybook/nextjs-tailwindcss-storybook
+   # > Done in 41.70s.
+   ```
 
 1. Move to current directory.
 
-    ```sh
-    mv nextjs-tailwindcss-storybook/.eslintrc.json ./
-    mv nextjs-tailwindcss-storybook/.gitignore     ./
-    mv nextjs-tailwindcss-storybook/next-env.d.ts  ./
-    mv nextjs-tailwindcss-storybook/next.config.js ./
-    mv nextjs-tailwindcss-storybook/node_modules   ./
-    mv nextjs-tailwindcss-storybook/package.json   ./
-    mv nextjs-tailwindcss-storybook/pages          ./
-    mv nextjs-tailwindcss-storybook/public         ./
-    mv nextjs-tailwindcss-storybook/styles         ./
-    mv nextjs-tailwindcss-storybook/tsconfig.json  ./
-    mv nextjs-tailwindcss-storybook/yarn.lock      ./
-    # mv nextjs-tailwindcss-storybook/README.md      ./
+   ```sh
+   mv nextjs-tailwindcss-storybook/.eslintrc.json ./
+   mv nextjs-tailwindcss-storybook/.gitignore     ./
+   mv nextjs-tailwindcss-storybook/next-env.d.ts  ./
+   mv nextjs-tailwindcss-storybook/next.config.js ./
+   mv nextjs-tailwindcss-storybook/node_modules   ./
+   mv nextjs-tailwindcss-storybook/package.json   ./
+   mv nextjs-tailwindcss-storybook/pages          ./
+   mv nextjs-tailwindcss-storybook/public         ./
+   mv nextjs-tailwindcss-storybook/styles         ./
+   mv nextjs-tailwindcss-storybook/tsconfig.json  ./
+   mv nextjs-tailwindcss-storybook/yarn.lock      ./
+   # mv nextjs-tailwindcss-storybook/README.md      ./
 
-    rm -rf nextjs-tailwindcss-storybook
-    ```
+   rm -rf nextjs-tailwindcss-storybook
+   ```
 
 1. Add export script.
 
-    ```sh
-    yarn add -D serve
-    ```
+   ```sh
+   yarn add -D serve
+   ```
 
-    - package.json
+   - package.json
 
-    ```diff
-      "build": "next build",
-    + "export": "next build && next export",
-      "start": "next start",
-    + "serve": "serve out",
-    ```
+   ```diff
+     "build": "next build",
+   + "export": "next build && next export",
+     "start": "next start",
+   + "serve": "serve out",
+   ```
 
-    - next.config.js
+   - next.config.js
 
-    ```diff
-      swcMinify: true,
-    + images: {
-    +   unoptimized: true
-    + }
-    ```
+   ```diff
+     swcMinify: true,
+   + images: {
+   +   unoptimized: true
+   + }
+   ```
 
 ### Prettier
 
-    - refs: https://prettier.io/docs/en/install.html
+1. Install.
 
-    ```sh
-    yarn add --dev --exact prettier
-    ```
+   - refs: https://prettier.io/docs/en/install.html
 
-    - .prettierrc.json
-    - .prettierignore
+   ```sh
+   yarn add --dev --exact prettier
+   ```
 
-    - package.json
+   - .prettierrc.json
+   - .prettierignore
 
-    ```diff
-    - "lint": "next lint"
-    + "lint": "next lint",
-    + "fmt": "prettier --write ."
-    ```
+   - package.json
 
-    - .vscode/settings.json
+   ```diff
+   - "lint": "next lint"
+   + "lint": "next lint",
+   + "fmt": "prettier --write ."
+   ```
 
-    ```diff
-    + {
-    +   "editor.formatOnSave": false,
-    +   "[json]": {
-    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    +     "editor.formatOnSave": true
-    +   },
-    +   "[typescript]": {
-    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    +     "editor.formatOnSave": true
-    +   },
-    +   "[typescriptreact]": {
-    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    +     "editor.formatOnSave": true
-    +   },
-    +   "[javascript]": {
-    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    +     "editor.formatOnSave": true
-    +   },
-    +   "[javascriptreact]": {
-    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    +     "editor.formatOnSave": true
-    +   },
-    +   "[css]": {
-    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    +     "editor.formatOnSave": true
-    +   }
-    + }
-    ```
+   - .vscode/settings.json
+
+   ```diff
+   + {
+   +   "editor.formatOnSave": false,
+   +   "[json]": {
+   +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+   +     "editor.formatOnSave": true
+   +   },
+   +   "[typescript]": {
+   +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+   +     "editor.formatOnSave": true
+   +   },
+   +   "[typescriptreact]": {
+   +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+   +     "editor.formatOnSave": true
+   +   },
+   +   "[javascript]": {
+   +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+   +     "editor.formatOnSave": true
+   +   },
+   +   "[javascriptreact]": {
+   +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+   +     "editor.formatOnSave": true
+   +   },
+   +   "[css]": {
+   +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+   +     "editor.formatOnSave": true
+   +   }
+   + }
+   ```
+
+1. Format.
+
+   ```sh
+   yarn fmt
+   ```

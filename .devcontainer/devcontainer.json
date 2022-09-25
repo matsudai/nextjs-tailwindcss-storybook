@@ -3,11 +3,7 @@
   "build": {
     "dockerfile": "./Dockerfile"
   },
-  "extensions": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "bradlc.vscode-tailwindcss"
-  ],
+  "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "bradlc.vscode-tailwindcss"],
   "postCreateCommand": "yarn install",
   "remoteUser": "node"
 }
