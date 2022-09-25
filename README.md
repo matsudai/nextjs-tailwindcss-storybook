@@ -147,3 +147,49 @@ yarn tailwindcss init -p
 +
 - ...
 ```
+
+### Storybook
+
+- refs https://storybook.js.org/docs/react/get-started/install
+
+1. Initialize.
+
+   ```sh
+   npx storybook init
+
+   # > storybook init - the simplest way to add a Storybook to your project.
+   # >
+   # > • Detecting project type. ✓
+   # > • Adding Storybook support to your "React" app
+   # >
+   # >     ...
+   # >
+   # > ✔ Do you want to run the 'eslintPlugin' migration on your project? … yes
+   # >
+   # >     ...
+   # >
+   # > Done in 7.52s.
+   # > ❌ error when running eslintPlugin migration:
+   # > ⚠️ The plugin was successfuly installed but failed to configure.
+   # >
+   # >     ...
+   # >
+   # > ✅ migration check successfully ran
+   # >
+   # > To run your Storybook, type:
+   # >    yarn storybook
+   # >
+   # > For more information visit: https://storybook.js.org
+   ```
+
+1. ☝ Update eslint.
+
+   - refs: https://github.com/storybookjs/eslint-plugin-storybook#usage
+   - .eslintrc.json
+
+   ```diff
+     {
+   -   "extends": "next/core-web-vitals"
+   +   "extends": ["next/core-web-vitals", "plugin:storybook/recommended"]
+     }
+   ```
