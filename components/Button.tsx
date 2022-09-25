@@ -1,5 +1,4 @@
 import React from 'react';
-import './button.css';
 
 interface ButtonProps {
   /**
@@ -28,11 +27,12 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={`font-bold border-0 rounded-3xl cursor-pointer inline-block leading-none ${
+        primary ? 'text-white bg-sky-400' : 'text-gray-700 bg-transparent shadow-rounded'
+      } ${size === 'small' ? 'text-sm px-4 py-2' : size === 'medium' ? 'text-base px-5 py-3' : 'text-lg px-6 py-3'}`}
       style={{ backgroundColor }}
       {...props}
     >
