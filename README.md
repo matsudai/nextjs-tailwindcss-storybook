@@ -38,3 +38,27 @@
 
     rm -rf nextjs-tailwindcss-storybook
     ```
+
+1. Add export script.
+
+    ```sh
+    yarn add -D serve
+    ```
+
+    - package.json
+
+    ```diff
+      "build": "next build",
+    + "export": "next build && next export",
+      "start": "next start",
+    + "serve": "serve out",
+    ```
+
+    - next.config.js
+
+    ```diff
+      swcMinify: true,
+    + images: {
+    +   unoptimized: true
+    + }
+    ```
