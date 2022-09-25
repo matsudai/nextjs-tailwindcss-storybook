@@ -62,3 +62,54 @@
     +   unoptimized: true
     + }
     ```
+
+### Prettier
+
+    - refs: https://prettier.io/docs/en/install.html
+
+    ```sh
+    yarn add --dev --exact prettier
+    ```
+
+    - .prettierrc.json
+    - .prettierignore
+
+    - package.json
+
+    ```diff
+    - "lint": "next lint"
+    + "lint": "next lint",
+    + "fmt": "prettier --write ."
+    ```
+
+    - .vscode/settings.json
+
+    ```diff
+    + {
+    +   "editor.formatOnSave": false,
+    +   "[json]": {
+    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    +     "editor.formatOnSave": true
+    +   },
+    +   "[typescript]": {
+    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    +     "editor.formatOnSave": true
+    +   },
+    +   "[typescriptreact]": {
+    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    +     "editor.formatOnSave": true
+    +   },
+    +   "[javascript]": {
+    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    +     "editor.formatOnSave": true
+    +   },
+    +   "[javascriptreact]": {
+    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    +     "editor.formatOnSave": true
+    +   },
+    +   "[css]": {
+    +     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    +     "editor.formatOnSave": true
+    +   }
+    + }
+    ```
