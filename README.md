@@ -121,3 +121,29 @@
    ```sh
    yarn fmt
    ```
+
+### Tailwindcss
+
+- refs: https://tailwindcss.com/docs/guides/nextjs
+
+```sh
+yarn add -D tailwindcss postcss autoprefixer
+yarn tailwindcss init -p
+```
+
+- tailwind.config.js
+
+```diff
+- content: [],
++ content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+```
+
+- styles/global.css
+
+```diff
++ @tailwind base;
++ @tailwind components;
++ @tailwind utilities;
++
+- ...
+```
