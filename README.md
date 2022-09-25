@@ -193,3 +193,30 @@ yarn tailwindcss init -p
    +   "extends": ["next/core-web-vitals", "plugin:storybook/recommended"]
      }
    ```
+
+1. Use Tailwindcss
+
+   - refs: https://storybook.js.org/addons/@storybook/addon-postcss
+
+   ```sh
+   yarn add -D @storybook/addon-postcss postcss@^8
+   ```
+
+   - .storybook/main.js
+
+   ```diff
+   - addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions'],
+   + addons: [
+   +  '@storybook/addon-links',
+   +  '@storybook/addon-essentials',
+   +  '@storybook/addon-interactions',
+   +  {
+   +   name: '@storybook/addon-postcss',
+   +   options: {
+   +     postcssLoaderOptions: {
+   +       implementation: require('postcss')
+   +     }
+   +   }
+   +  }
+   + ],
+   ```
