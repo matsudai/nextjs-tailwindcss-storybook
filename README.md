@@ -194,6 +194,34 @@ yarn tailwindcss init -p
      }
    ```
 
+1. Use Next.js
+
+   ★ When this plugin is used, Tailwindcss addons is NOT needed.
+
+   - refs: https://storybook.js.org/docs/react/configure/images-and-assets#serving-static-files-via-storybook
+   - refs: https://storybook.js.org/addons/storybook-addon-next
+
+   ```sh
+   yarn add -D storybook-addon-next
+   ```
+
+   - .storybook/main.js
+
+   ```diff
+     addons: [
+      '@storybook/addon-links',
+      '@storybook/addon-essentials',
+      '@storybook/addon-interactions',
+   +  'storybook-addon-next',
+   ```
+
+   ```diff core: {
+      builder: '@storybook/builder-webpack5'
+   - }
+   + },
+   + staticDirs: ['../public']
+   ```
+
 1. Use Tailwindcss
 
    - refs: https://storybook.js.org/addons/@storybook/addon-postcss
